@@ -367,7 +367,7 @@ export function Card2() {
       <section className="info-card-box">
         <div className="info-card-box-img-thumbnail">
           <a href="https://github.com/JessCai06/Shapeshifter/tree/main">
-            <img src="./assets/shapeshifter_portrait.png"></img>
+            <img src="src/assets/shapeshifter_portrait.png"></img>
           </a>
         </div>
         <div className="info-card-box-summary">
@@ -389,8 +389,148 @@ export function Card2() {
           </span>
 
           <h5 className="info-card-box-description">
-            Created a crash map that takes part in a larger project to prevent
-            Heavy Duty Vehicle (HDV) crashes.
+            A simple 3D editor I created with my undergraduate freshman 15-112
+            course during Fall 2024
+          </h5>
+          {/* <ul>
+            <li>GIS Analysis</li>
+            <li>Open Source</li>
+          </ul> */}
+        </div>
+      </section>
+    </>
+  );
+}
+
+export function Card3() {
+  return (
+    <>
+      <style>
+        {`
+          
+            .info-card-box {
+              border-radius: 25px;
+              background-color: #303030;
+              width: 55rem;
+              height: 35rem;
+              display:flex;
+              margin: 0 auto; /* top/bottom 0, left/right auto */
+              margin-top:2rem;
+            }
+
+            .info-card-box-img-thumbnail{
+              flex:5;
+              margin-left:3em;
+            }
+            .info-card-box-summary{
+              flex:3;  
+              margin:2rem;
+              flex-direction: column;  /* stack text top → bottom */
+              align-items: left;     /* horizontal centering */
+              justify-content: center; /* vertical centering */
+              text-align: left;
+            }
+              .info-card-box-img-thumbnail {
+                width: 100%;              /* takes full width of container */
+                display: flex;            /* flexbox centers the child */
+                justify-content: center;  /* center horizontally */
+                align-items: center;      /* center vertically */
+                overflow: hidden;         /* crop anything outside */
+              }
+            .info-card-box-img-thumbnail :hover {
+              transform: scale(1.1); 
+              transition:smooth;
+              drop-shadow:10px
+            }
+
+              .info-card-box-img-thumbnail img {
+                height: 100%;             /* scale to fit vertically */
+                width: auto;              /* maintain aspect ratio */
+                object-fit: cover;        /* crop overflow */
+              }
+              .info-card-box-summary .heading{
+                color:white;
+                font-family:Monospace;
+                letter-spacing:.4em;
+                font-size:3rem;
+                text-align: left;
+                margin:0;
+              }
+              .info-card-box-summary .subheading{
+                color:#A8A8A8;
+                font-family:Inter;
+                letter-spacing:.2em;
+                font-size:1.3rem;
+                text-align: left;
+                margin:0;
+              }
+              .info-card-tag-button button {
+                  background-color: #646cff;
+                  border: none;
+                  color: black;
+                  padding: 8px 16px;
+                  text-align: center;
+                  font-size: 16px;
+                  margin: 10px 12px 0 0;
+                  border-radius: 20px;
+                  cursor: pointer; /* show pointer on hover */
+                  transition: background-color 0.3s ease, transform 0.2s ease;
+                }
+
+                .info-card-tag-button button:hover {
+                  background-color: #4b52cc; /* darker shade on hover */
+                  color: white;              /* flip text color */
+                  transform: scale(1.05);    /* subtle grow effect */
+                }
+              .info-card-box-description{
+                color:white;
+                font-family: Segoe UI;
+                font-size: 20px;
+                font-weight:200;
+                margin-right:4rem;
+              }
+          
+        `}
+      </style>
+
+      <section className="info-card-box">
+        <div className="info-card-box-img-thumbnail">
+          <a href="https://github.com/JessCai06/Duquesne-Incline">
+            <img src="src/assets/duquesne.png"></img>
+          </a>
+        </div>
+        <div className="info-card-box-summary">
+          <h5 className="heading">
+            Duquesne<br></br>-Incline
+          </h5>
+          <h5 className="subheading">SPRING 25</h5>
+          <span className="info-card-tag-button">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://www.figma.com/design/LX7izRPb4N8thlZ1NcKFEb/Untitled?node-id=0-1&t=0GqI3yyws2hhXNDL-1",
+                  "_blank"
+                )
+              }
+            >
+              Figma Prototype
+            </button>
+          </span>
+          <span className="info-card-tag-button">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://github.com/JessCai06/Duquesne-Incline",
+                  "_blank"
+                )
+              }
+            >
+              Figma Prototype
+            </button>
+          </span>
+
+          <h5 className="info-card-box-description">
+            A recreation of the current Duquesne Incline website
           </h5>
           {/* <ul>
             <li>GIS Analysis</li>
@@ -448,6 +588,7 @@ export function Portfolio() {
 
         <section className="CardDeck">
           <Card1 />
+          <Card3 />
           <Card2 />
         </section>
       </section>
