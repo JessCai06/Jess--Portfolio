@@ -2,6 +2,10 @@ import headshotIMG from "./assets/Headshot.png";
 import logoIMG from "./assets/logo.png";
 import "./App.css";
 
+
+import img1 from "src/photography/DSC00527.JPG";
+import img2 from "src/photography/DSC01192.JPG";
+
 export function Navigator() {
   return (
     <>
@@ -395,6 +399,61 @@ export function MyLinks() {
   );
 }
 
+export function PhotoWall() {
+  const photos = [
+    { src: img1, alt: "DSC00527" },
+    { src: img2, alt: "DSC01192" },
+  ];
+
+  return (
+    <>
+      <style>
+        {`
+          .photowall-shell {
+            padding: 2rem 1rem;
+          }
+          .masonry {
+            column-gap: 1rem;
+            column-fill: balance;
+          }
+          @media (min-width: 360px)  { .masonry { column-count: 1; } }
+          @media (min-width: 640px)  { .masonry { column-count: 2; } }
+          @media (min-width: 1024px) { .masonry { column-count: 3; } }
+          @media (min-width: 1440px) { .masonry { column-count: 4; } }
+          @media (min-width: 1920px) { .masonry { column-count: 5; } }
+
+          .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1rem;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow:
+              0 1px 2px rgba(0,0,0,0.06),
+              0 8px 24px rgba(0,0,0,0.08);
+            background: #111;
+          }
+
+          .masonry-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+          }
+        `}
+      </style>
+
+      <section className="photowall-shell">
+        <div className="masonry" aria-label="Photography Masonry Grid">
+          {photos.map((p, i) => (
+            <figure key={i} className="masonry-item">
+              <img src={p.src} alt={p.alt} loading="lazy" />
+            </figure>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}
+
 export default function App() {
   return (
     <>
@@ -403,6 +462,7 @@ export default function App() {
       {/* body: content varies by page */}
       <BodyContent />
       {/* footer: currently empty */}
+      <PhotoWall />
     </>
   );
 }
