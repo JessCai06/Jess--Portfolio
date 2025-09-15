@@ -525,7 +525,7 @@ export function Card3() {
                 )
               }
             >
-              Figma Prototype
+              Project Repo
             </button>
           </span>
 
@@ -563,6 +563,7 @@ export function Portfolio() {
             font-family: Segoe UI;
             font-weight: 600;
             font-size: 2.5rem;
+            letter-spacing:.2;
           }
           .Filter h2{
             margin:0;
@@ -579,7 +580,7 @@ export function Portfolio() {
       <section className="spacer"></section>
       <section className="Portfolio" id="Portfolio">
         <section className="Filter">
-          <h1>Portfolio</h1>
+          <h1>PORTFOLIO</h1>
           <h2>data</h2>
           <h2>programming</h2>
           <h2>design</h2>
