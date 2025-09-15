@@ -2,7 +2,7 @@ import headshotIMG from "./assets/Headshot.png";
 import logoIMG from "./assets/logo.png";
 import "./App.css";
 
-export function Header() {
+export function Navigator() {
   return (
     <>
       <style>
@@ -16,16 +16,17 @@ export function Header() {
             overflow: hidden;
             z-index:1000;
             filter: drop-shadow(0px 3em 1.5em white);
+            margin-left:10em;
+            margin-right:10em;
           }
               .Logo {
                 background-color: white;
-                padding:2em 2em 0 5em;
+                padding:2em 2em 0 0;
               }
               .Navbar {
                 background-color:white;
                 display: flex;
                 margin-left:auto;
-                margin-right:5em;
               }
                   .Navbar h2{
                     font-family: Inter;
@@ -133,19 +134,141 @@ export function About() {
   );
 }
 
+
 export function Card() {
   return (
     <>
       <style>
         {`
-          .Card{
-            background-color:purple;
-          }
+          
+            .info-card-box {
+              border-radius: 25px;
+              background-color: #303030;
+              width: 55rem;
+              height: 35rem;
+              display:flex;
+              margin: 0 auto; /* top/bottom 0, left/right auto */
+            }
+
+            .info-card-box-img-thumbnail{
+              flex:5;
+              margin-left:3em;
+            }
+            .info-card-box-summary{
+              flex:3;  
+              margin:2rem;
+              flex-direction: column;  /* stack text top → bottom */
+              align-items: left;     /* horizontal centering */
+              justify-content: center; /* vertical centering */
+              text-align: left;
+            }
+              .info-card-box-img-thumbnail {
+                width: 100%;              /* takes full width of container */
+                display: flex;            /* flexbox centers the child */
+                justify-content: center;  /* center horizontally */
+                align-items: center;      /* center vertically */
+                overflow: hidden;         /* crop anything outside */
+              }
+            .info-card-box-img-thumbnail :hover {
+              transform: scale(1.1); 
+              transition:smooth;
+              drop-shadow:10px
+            }
+
+              .info-card-box-img-thumbnail img {
+                height: 100%;             /* scale to fit vertically */
+                width: auto;              /* maintain aspect ratio */
+                object-fit: cover;        /* crop overflow */
+              }
+              .info-card-box-summary .heading{
+                color:white;
+                font-family:Monospace;
+                letter-spacing:.4em;
+                font-size:3rem;
+                text-align: left;
+                margin:0;
+              }
+              .info-card-box-summary .subheading{
+                color:#A8A8A8;
+                font-family:Inter;
+                letter-spacing:.2em;
+                font-size:1.3rem;
+                text-align: left;
+                margin:0;
+              }
+              .info-card-tag-button button {
+                  background-color: #646cff;
+                  border: none;
+                  color: black;
+                  padding: 8px 16px;
+                  text-align: center;
+                  font-size: 16px;
+                  margin: 10px 12px 0 0;
+                  border-radius: 20px;
+                  cursor: pointer; /* show pointer on hover */
+                  transition: background-color 0.3s ease, transform 0.2s ease;
+                }
+
+                .info-card-tag-button button:hover {
+                  background-color: #4b52cc; /* darker shade on hover */
+                  color: white;              /* flip text color */
+                  transform: scale(1.05);    /* subtle grow effect */
+                }
+              .info-card-box-description{
+                color:white;
+                font-family: Segoe UI;
+                font-size: 20px;
+                font-weight:200;
+                margin-right:4rem;
+              }
+          
         `}
       </style>
-      {/* <article className="Card">
-        <img className='card-img' scr>
-      </article> */}
+
+      <section className="info-card-box">
+        <div className="info-card-box-img-thumbnail">
+          <a href="https://jesscai06.github.io/Pittsburgh-Crash-Heat-Map-2025/">
+            <img src="src/assets/SURA thumbnail.png"></img>
+          </a>
+        </div>
+        <div className="info-card-box-summary">
+          <h5 className="heading">SURA</h5>
+          <h5 className="subheading">SUMMER 25</h5>
+          <span className="info-card-tag-button">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://jesscai06.github.io/Pittsburgh-Crash-Heat-Map-2025/",
+                  "_blank"
+                )
+              }
+            >
+              Pittsburgh Crash Map
+            </button>
+          </span>
+          <span className="info-card-tag-button">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://github.com/JessCai06/Pittsburgh-Crash-Heat-Map-2025",
+                  "_blank"
+                )
+              }
+            >
+              Project Repo
+            </button>
+          </span>
+
+          <h5 className="info-card-box-description">
+            Created a crash map that takes part in a larger project to prevent
+            Heavy Duty Vehicle (HDV) crashes.
+          </h5>
+          {/* <ul>
+            <li>GIS Analysis</li>
+            <li>Open Source</li>
+          </ul> */}
+        </div>
+      </section>
     </>
   );
 }
@@ -156,24 +279,45 @@ export function Portfolio() {
       <style>
         {`
           .Portfolio{
-            margin-top:20rem;
             display:flex;
+            margin-left: 5rem;
+            margin-right: 5rem;
           }
           .Filter{
             font-family: Segoe UI;
             flex:1;
+            margin-right:1rem;
+            align-items: left; 
+          }
+          .Filter h1{
+            margin:0;
+            font-family: Segoe UI;
+            font-weight: 600;
+            font-size: 2.5rem;
+          }
+          .Filter h2{
+            margin:0;
+            font-family: Segoe UI;
+            font-weight: 300;
+            font-size: 1.5rem;
           }
           .CardDeck{
-            flex:2;
+            flex:4;
+            margin-left: 1rem;
           }
         `}
       </style>
-      <section className="Portfolio">
+      <section className="spacer"></section>
+      <section className="Portfolio" id="Portfolio">
         <section className="Filter">
-          <h2>Filter</h2>
+          <h1>Portfolio</h1>
+          <h2>data</h2>
+          <h2>programming</h2>
+          <h2>design</h2>
+          <h2>photography</h2>
         </section>
+
         <section className="CardDeck">
-          <Card />
           <Card />
         </section>
       </section>
@@ -198,13 +342,16 @@ export function BodyContent() {
   return (
     <>
       <About />
-      <Footer />
+      <MyLinks />
       <Portfolio />
+      <Stack />
+      {/* 
+      ideas: have more animations. */}
     </>
   );
 }
 
-export function Footer() {
+export function MyLinks() {
   return (
     <>
       <style>{`
@@ -252,7 +399,7 @@ export default function App() {
   return (
     <>
       {/* header: logo + nav bar*/}
-      <Header />
+      <Navigator />
       {/* body: content varies by page */}
       <BodyContent />
       {/* footer: currently empty */}
