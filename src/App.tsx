@@ -2,7 +2,6 @@ import headshotIMG from "./assets/Headshot.png";
 import logoIMG from "./assets/logo.png";
 import "./App.css";
 
-
 export function Navigator() {
   return (
     <>
@@ -135,8 +134,7 @@ export function About() {
   );
 }
 
-
-export function Card() {
+export function Card1() {
   return (
     <>
       <style>
@@ -149,6 +147,7 @@ export function Card() {
               height: 35rem;
               display:flex;
               margin: 0 auto; /* top/bottom 0, left/right auto */
+              margin-bottom:2rem;
             }
 
             .info-card-box-img-thumbnail{
@@ -274,6 +273,135 @@ export function Card() {
   );
 }
 
+export function Card2() {
+  return (
+    <>
+      <style>
+        {`
+          
+            .info-card-box {
+              border-radius: 25px;
+              background-color: #303030;
+              width: 55rem;
+              height: 35rem;
+              display:flex;
+              margin: 0 auto; /* top/bottom 0, left/right auto */
+              margin-top:2rem;
+            }
+
+            .info-card-box-img-thumbnail{
+              flex:5;
+              margin-left:3em;
+            }
+            .info-card-box-summary{
+              flex:3;  
+              margin:2rem;
+              flex-direction: column;  /* stack text top → bottom */
+              align-items: left;     /* horizontal centering */
+              justify-content: center; /* vertical centering */
+              text-align: left;
+            }
+              .info-card-box-img-thumbnail {
+                width: 100%;              /* takes full width of container */
+                display: flex;            /* flexbox centers the child */
+                justify-content: center;  /* center horizontally */
+                align-items: center;      /* center vertically */
+                overflow: hidden;         /* crop anything outside */
+              }
+            .info-card-box-img-thumbnail :hover {
+              transform: scale(1.1); 
+              transition:smooth;
+              drop-shadow:10px
+            }
+
+              .info-card-box-img-thumbnail img {
+                height: 100%;             /* scale to fit vertically */
+                width: auto;              /* maintain aspect ratio */
+                object-fit: cover;        /* crop overflow */
+              }
+              .info-card-box-summary .heading{
+                color:white;
+                font-family:Monospace;
+                letter-spacing:.4em;
+                font-size:3rem;
+                text-align: left;
+                margin:0;
+              }
+              .info-card-box-summary .subheading{
+                color:#A8A8A8;
+                font-family:Inter;
+                letter-spacing:.2em;
+                font-size:1.3rem;
+                text-align: left;
+                margin:0;
+              }
+              .info-card-tag-button button {
+                  background-color: #646cff;
+                  border: none;
+                  color: black;
+                  padding: 8px 16px;
+                  text-align: center;
+                  font-size: 16px;
+                  margin: 10px 12px 0 0;
+                  border-radius: 20px;
+                  cursor: pointer; /* show pointer on hover */
+                  transition: background-color 0.3s ease, transform 0.2s ease;
+                }
+
+                .info-card-tag-button button:hover {
+                  background-color: #4b52cc; /* darker shade on hover */
+                  color: white;              /* flip text color */
+                  transform: scale(1.05);    /* subtle grow effect */
+                }
+              .info-card-box-description{
+                color:white;
+                font-family: Segoe UI;
+                font-size: 20px;
+                font-weight:200;
+                margin-right:4rem;
+              }
+          
+        `}
+      </style>
+
+      <section className="info-card-box">
+        <div className="info-card-box-img-thumbnail">
+          <a href="https://github.com/JessCai06/Shapeshifter/tree/main">
+            <img src="./assets/shapeshifter_portrait.png"></img>
+          </a>
+        </div>
+        <div className="info-card-box-summary">
+          <h5 className="heading">
+            Shape-<br></br>shifter
+          </h5>
+          <h5 className="subheading">FALL 24</h5>
+          <span className="info-card-tag-button">
+            <button
+              onClick={() =>
+                window.open(
+                  "https://github.com/JessCai06/Shapeshifter/tree/main",
+                  "_blank"
+                )
+              }
+            >
+              Project Repo
+            </button>
+          </span>
+
+          <h5 className="info-card-box-description">
+            Created a crash map that takes part in a larger project to prevent
+            Heavy Duty Vehicle (HDV) crashes.
+          </h5>
+          {/* <ul>
+            <li>GIS Analysis</li>
+            <li>Open Source</li>
+          </ul> */}
+        </div>
+      </section>
+    </>
+  );
+}
+
 export function Portfolio() {
   return (
     <>
@@ -319,7 +447,8 @@ export function Portfolio() {
         </section>
 
         <section className="CardDeck">
-          <Card />
+          <Card1 />
+          <Card2 />
         </section>
       </section>
     </>
@@ -396,7 +525,6 @@ export function MyLinks() {
   );
 }
 
-
 export default function App() {
   return (
     <>
@@ -405,7 +533,6 @@ export default function App() {
       {/* body: content varies by page */}
       <BodyContent />
       {/* footer: currently empty */}
-      <PhotoWall />
     </>
   );
 }
